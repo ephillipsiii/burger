@@ -5,4 +5,4 @@ INSERT INTO burger (burger_name, devoured)
 VALUES ('Elk Jalapeno Cheddar Burger', false);
 
 INSERT INTO burger (burger_name, devoured)
-VALUES ('American Classic Cheesburger', false);
+VALUES ('Southern Chili Burger', false);
