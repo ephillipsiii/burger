@@ -16,15 +16,8 @@ function printQuestionMarks(num) {
 
 function objToSql(ob) {
     var arr = [];
-
     for (var key in ob) {
-        var value = ob[key];
-        if (Object.hasOwnProperty.call(ob, key)) {
-            if (typeof value === "string" && value.indexOf('') >= 0){
-                vale = "'" + value + "'";
-            }
-        }
-        arr. push(key + "=" + ob[key]);
+        arr.push(key + "=" + ob[key]);
     }
     return arr.toString();
 }
@@ -66,7 +59,7 @@ var orm = {
     //updating one entry in the table
     updateOne: function(table, objColVals, condition, cb){
         //query string updating one entry in the table
-        var queryString = "UPDATE" + table;
+        var queryString = "UPDATE " + table;
         queryString += " SET ";
         queryString += objToSql(objColVals);
         queryString += " WHERE ";

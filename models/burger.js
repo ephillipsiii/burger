@@ -4,24 +4,23 @@ var orm = require("../config/orm.js");
 // ORM functions using burger specific input for the ORM.
 
 var burger ={
-    all: function(cb) {
-        orm.allOrder("burgers", "date, id", function(res){
+    selectAll: function(cb) {
+        orm.selectAll("burgers", "date, id", function(res){
             cb(res);
         });
     },
-    create: function(vals, cb) {
-        orm.create("burgers", ['burger_name'], vals, function(res) {
+    insertOne: function(cols, vals, cb) {
+        orm.insertOne("burgers", cols, vals, function(res) {
             cb(res);
         });
     },
-    update: function(objColVals, condition, cb) {
-        objColVals.date = new Date().toISOString().slice(0,19).replace('T', '');
-        orm.update("burgers", objColVals, condition, function(res){
+    updateOne: function(objColVals, condition, cb) {
+        orm.updateOne("burgers", objColVals, condition, function(res){
             cb(res);
         });
     },
-    delete: function(condition, cb){
-        orm.delete("burgers", condition, function(res){
+    deleteOne: function(condition, cb){
+        orm.deleteOne("burgers", condition, function(res){
             cb(res);
         });
     }
