@@ -3,7 +3,7 @@
 // will export ORM object: module.exports
 
 //importing mysql 
-var connection = require('./connection.js');
+const connection = require('./connection.js');
 
 function printQuestionMarks(num) {
     var arr = [];
