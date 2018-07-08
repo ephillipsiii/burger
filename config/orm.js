@@ -27,12 +27,13 @@ var orm = {
     //select all function to return table entries
     selectAll: function(tableInput, cb) {
         //returning all rows from the table
-        var queryString = "SELECT * FROM" + tableInput + ";";
+        var queryString = "SELECT * FROM " + tableInput + ";";
         //querying the database
         connection.query(queryString, function(err, result) {
             if (err) {
                 throw err;
             }
+            
             cb(result);
         });
     },
